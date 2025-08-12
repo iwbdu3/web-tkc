@@ -9,8 +9,6 @@ class PermissionTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
@@ -22,11 +20,11 @@ class PermissionTableSeeder extends Seeder
             'client-list',
             'client-create',
             'client-edit',
-            'client-delete'
+            'client-delete',
         ];
 
         foreach ($permissions as $permission) {
-            Permission::create(['name' => $permission]);
+            Permission::firstOrCreate(['name' => $permission]);
         }
     }
 }

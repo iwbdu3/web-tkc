@@ -27,48 +27,53 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Name:</strong>
-                            <input type="text" name="name" value="{{ old('name', $user->name) }}" placeholder="Name" class="form-control">
+                            <input type="text" name="name" value="{{ old('name', $user->name) }}" placeholder="Name"
+                                class="form-control">
                         </div>
                     </div>
-            
+
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Email:</strong>
-                            <input type="text" name="email" value="{{ old('email', $user->email) }}" placeholder="Email" class="form-control">
+                            <input type="text" name="email" value="{{ old('email', $user->email) }}"
+                                placeholder="Email" class="form-control">
                         </div>
                     </div>
-            
+
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Password:</strong>
                             <input type="password" name="password" placeholder="Password" class="form-control">
                         </div>
                     </div>
-            
+
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Confirm Password:</strong>
-                            <input type="password" name="confirm-password" placeholder="Confirm Password" class="form-control">
+                            <input type="password" name="confirm-password" placeholder="Confirm Password"
+                                class="form-control">
                         </div>
                     </div>
-            
+
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Role:</strong>
-                            <select class="form-control select2" name="roles[]" multiple>
-                                @foreach($roles as $role)
-                                    <option value="{{ $role }}" @if(in_array($role, $userRole)) selected @endif>{{ $role }}</option>
+                            {{-- <select name="roles[]" class="select2"> --}}
+                            <select class="form-control select2" name="roles[]">
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role }}" @if (in_array($role, $userRole)) selected @endif>
+                                        {{ ucfirst($role) }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-            
+
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center mt-2">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </form>
-            
+
 
         </div>
 
@@ -77,13 +82,12 @@
 
 @section('script')
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             let role = $('.select2');
             role.select2({
                 placeholder: 'Select...',
                 width: '100%',
                 allowClear: true,
-                multiple: true
             });
         });
     </script>

@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'custom_id'
     ];
 
     /**
@@ -42,4 +43,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getRoleFromCustomIdAttribute()
+    {
+        return match (substr($this->custom_id, 0, 3)) {
+            'adm' => 'admin',
+            'pnt' => 'panitia',
+            'pnj' => 'penguji',
+            'psa' => 'peserta',
+            default => null,
+        };
+    }
 }

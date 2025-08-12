@@ -1,82 +1,139 @@
 <ul class="sidebar-nav" data-coreui="navigation" data-simplebar>
     @auth
-    <li class="nav-item">
-        <a class="nav-link" href="{{ route('home') }}">
-            <svg class="nav-icon">
-                <use xlink:href="{{ asset('icons/coreui.svg#cil-speedometer') }}"></use>
-            </svg>
-            {{ __('Dashboard') }}
-        </a>
-    </li>
 
+        {{-- <div style="padding: 10px; color:red;">
+            Role aktif: {{ implode(', ', Auth::user()->getRoleNames()->toArray()) }}
+        </div> --}}
+
+        <!-- Dashboard bisa untuk semua role -->
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('users.index') }}">
+            <a class="nav-link" href="{{ route('home') }}">
                 <svg class="nav-icon">
-                    <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
+                    <use xlink:href="{{ asset('icons/coreui.svg#cil-speedometer') }}"></use>
                 </svg>
-                {{ __('Users') }}
+                {{ __('Dashboard') }}
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('roles.index') }}">
-                <svg class="nav-icon">
-                    <use xlink:href="{{ asset('icons/coreui.svg#cil-group') }}"></use>
-                </svg>
-                {{ __('Roles') }}
-            </a>
-        </li>
+        {{-- Admin Only --}}
+        @role('admin')
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('users.index') }}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
+                    </svg>
+                    {{ __('Users') }}
+                </a>
+            </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('clients.index') }}">
-                <svg class="nav-icon">
-                    <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
-                </svg>
-                {{ __('Clients') }}
-            </a>
-        </li>
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('roles.index') }}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-group') }}"></use>
+                    </svg>
+                    {{ __('Roles') }}
+                </a>
+            </li> --}}
 
-{{--        <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>--}}
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('clients.index') }}">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
+                    </svg>
+                    {{ __('Clients') }}
+                </a>
+            </li> --}}
+        @endrole
 
-{{--        <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>--}}
+        {{-- Panitia dan Admin --}}
+        @role('panitia|admin')
+            <!-- Dropdown Menu Ujian -->
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-library') }}"></use>
+                    </svg>
+                    {{ __('Ujian') }}
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('jadwal-ujian.index') }}">
+                            <span class="nav-icon" style="font-size: 20px; color: #adb5bd;">›</span>
+                            {{ __('Jadwal Ujian') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('peserta.index') }}">
+                            <span class="nav-icon" style="font-size: 20px; color: #adb5bd;">›</span>
+                            {{ __('Pendaftaran') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('hasil_ujian.index') }}">
+                            <span class="nav-icon" style="font-size: 20px; color: #adb5bd;">›</span>
+                            {{ __('Hasil Ujian') }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        @endrole
 
-{{--        <li><a class="nav-link" href="{{ route('products.index') }}">Manage Product</a></li>--}}
+        {{-- Penguji --}}
+        @role('admin|penguji')
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-library') }}"></use>
+                    </svg>
+                    {{ __('Penilaian') }}
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('penilaian.index') }}">
+                            <span class="nav-icon" style="font-size: 20px; color: #adb5bd;">›</span>
+                            {{ __('Input Nilai') }}
+                        </a>
 
-{{--    <li class="nav-item">--}}
-{{--        <a class="nav-link" href="{{ route('users.index') }}">--}}
-{{--            <svg class="nav-icon">--}}
-{{--                <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>--}}
-{{--            </svg>--}}
-{{--            {{ __('Users') }}--}}
-{{--        </a>--}}
-{{--    </li>--}}
+                    </li>
+                </ul>
+            </li>
+        @endrole
 
-{{--    <li class="nav-item">--}}
-{{--        <a class="nav-link" href="{{ route('about') }}">--}}
-{{--            <svg class="nav-icon">--}}
-{{--                <use xlink:href="{{ asset('icons/coreui.svg#cil-speedometer') }}"></use>--}}
-{{--            </svg>--}}
-{{--            {{ __('About us') }}--}}
-{{--        </a>--}}
-{{--    </li>--}}
+        {{-- Peserta --}}
+        @role('peserta')
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
+                    </svg>
+                    {{ __('Profil Saya') }}
+                </a>
+            </li> --}}
 
-{{--    <li class="nav-group" aria-expanded="false">--}}
-{{--        <a class="nav-link nav-group-toggle" href="#">--}}
-{{--            <svg class="nav-icon">--}}
-{{--                <use xlink:href="{{ asset('icons/coreui.svg#cil-star') }}"></use>--}}
-{{--            </svg>--}}
-{{--            Two-level menu--}}
-{{--        </a>--}}
-{{--        <ul class="nav-group-items" style="height: 0px;">--}}
-{{--            <li class="nav-item">--}}
-{{--                <a class="nav-link" href="#" target="_top">--}}
-{{--                    <svg class="nav-icon">--}}
-{{--                        <use xlink:href="{{ asset('icons/coreui.svg#cil-bug') }}"></use>--}}
-{{--                    </svg>--}}
-{{--                    Child menu--}}
-{{--                </a>--}}
-{{--            </li>--}}
-{{--        </ul>--}}
-{{--    </li>--}}
+            <!-- Dropdown Menu Ujian -->
+            <li class="nav-group">
+                <a class="nav-link nav-group-toggle" href="#">
+                    <svg class="nav-icon">
+                        <use xlink:href="{{ asset('icons/coreui.svg#cil-library') }}"></use>
+                    </svg>
+                    {{ __('Ujian') }}
+                </a>
+                <ul class="nav-group-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('daftar_ujian.index') }}">
+                            <span class="nav-icon" style="font-size: 20px; color: #adb5bd;">›</span>
+                            {{ __('Daftar Ujian') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('hasil_ujian.index') }}">
+                            <span class="nav-icon" style="font-size: 20px; color: #adb5bd;">›</span>
+                            {{ __('Hasil Ujian') }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        @endrole
+
     @endauth
 </ul>

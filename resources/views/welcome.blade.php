@@ -1,132 +1,718 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Kevin Sport</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
+    <style>
+        .navbar-nav .nav-link {
+            color: #343a40;
+            /* default gelap */
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
+        .navbar-nav .nav-link:hover {
+            color: #0d6efd;
+            /* hover warna biru */
+        }
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
+        .navbar-nav .nav-link.active {
+            color: #0d6efd !important;
+            /* warna biru untuk yang aktif */
+        }
+    </style>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
+</head>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
+<body class="antialiased">
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top py-3">
+        <div class="container">
+            <!-- Logo dan Brand -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="{{ asset('images/logo.jpg') }}" alt="Logo" style="height: 50px;" class="me-2">
+                <h4 class="m-0 fw-bold text-primary">KEVIN SPORT</h4>
+            </a>
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
+            <!-- Toggle button (untuk mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
+            <!-- Menu Navigasi -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#feature">Benefits</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#class">Class</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#coach">Coach</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://wa.me/6282127032424">Contact</a>
+                    </li>
+                    {{-- <li class="nav-item">
+                        <a class="btn btn-primary ms-2" href="{{ route('login') }}">Login</a>
+                    </li> --}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Header Start -->
+    <div class="jumbotron jumbotron-fluid position-relative header-overlay">
+        <div class="container text-center my-5 py-5">
+            <h1 class="text-white mt-4 mb-4">KEVIN SPORT</h1>
+            <h1 class="text-white display-1 mb-5">Taekwondo Team</h1>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Header End -->
+
+    <!-- About Start -->
+    <section id="about" class="section-bg">
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="{{ asset('images/about.jpg') }}"
+                                alt="About Kevin Sport" style="object-fit: cover;">
                         </div>
                     </div>
-                </div>
-
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
-
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
+                    <div class="col-lg-7">
+                        <div class="section-title position-relative mb-4">
+                            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About Us
+                            </h6>
+                            <h1 class="display-4">Tempat Berkembangnya Atlet Muda Bertalenta dari Cirebon</h1>
                         </div>
-                    </div>
-
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                        <p>Kevin Sport Taekwondo adalah pusat pelatihan bela diri yang berdedikasi untuk mengembangkan
+                            atlet-atlet unggul dari Kota Cirebon dan sekitarnya. Sejak didirikan, kami telah menjadi
+                            tempat berkumpulnya para pejuang muda yang ingin belajar, berkembang, dan berprestasi
+                            melalui seni bela diri Taekwondo.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </section>
+    <!-- About End -->
+
+    <!-- Feature Start -->
+    <section id="feature">
+        <div class="container-fluid bg-image" style="margin: 90px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 my-5 pt-5 pb-lg-5">
+                        <div class="section-title position-relative mb-4">
+                            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose
+                                Us?</h6>
+                            <h1 class="display-4">Kenapa Harus Bergabung dengan Kevin Sport Academy?</h1>
+                        </div>
+                        <p class="mb-4 pb-2">Di Kevin Sport Academy, kami tidak hanya mengajarkan teknik bela diri,
+                            tetapi juga membentuk karakter, disiplin, dan semangat juang. Dengan pelatih berpengalaman
+                            dan program yang terstruktur, kami siap mendampingi setiap langkah perjalanan Anda.
+                        </p>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-primary mr-4">
+                                <i class="fa fa-2x fa-chalkboard-teacher text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Pelatih Bersertifikat Nasional</h4>
+                                <p>Pelatih kami tersertifikasi nasional, berpengalaman melatih segala usia dan tingkat
+                                    kemampuan, dengan rekam jejak di kompetisi.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-secondary mr-4">
+                                <i class="fa fa-2x fa-dumbbell text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Program Terarah</h4>
+                                <p>Dari teknik dasar hingga sparring dan poomsae tingkat lanjut, program kami fokus pada
+                                    pengembangan fisik dan mental untuk pemula hingga atlet.</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-icon bg-warning mr-4">
+                                <i class="fa fa-2x fa-clock text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Jadwal Fleksibel</h4>
+                                <p class="m-0">Kelas tersedia untuk anak-anak, remaja, dan dewasa, dengan waktu
+                                    latihan
+                                    yang fleksibel agar sesuai dengan rutinitas Anda.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="{{ asset('images/feature.jpg') }}"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature End -->
+
+    <!-- Class Start -->
+    <section id="class">
+        <div class="container-fluid px-0 py-5">
+            <div class="row mx-0 justify-content-center pt-5">
+                <div class="col-lg-6">
+                    <div class="section-title text-center position-relative mb-4">
+                        <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Class</h6>
+                        <h1 class="display-4">Kelas yang tersedia di Kevin Sport</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt-2">
+                    <div class="col-lg-5" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="{{ asset('images/kevin-junior.jpg') }}"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 my-5 pt-5 pb-lg-5">
+                        <div class="section-title position-relative mb-4">
+                            <h1 class="display-4">Kevin Junior</h1>
+                        </div>
+                        <p class="mb-4 pb-2">Program khusus untuk anak-anak usia dini hingga remaja awal. Fokus pada
+                            pengenalan dasar bela diri,
+                            motorik, serta membangun kepercayaan diri.
+                        </p>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-primary mr-4">
+                                <i class="fa fa-2x fa-calendar-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Jadwal Latihan</h4>
+                                <p>Selasa, Kamis dan Sabtu (15.45 - 17.30)<br>
+                                    Minggu (07.30 - 10.30)</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-secondary mr-4">
+                                <i class="fa fa-2x fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Lokasi</h4>
+                                <p>Dojang Kevin Sport, Kalijaga, Kec. Harjamukti, Kota Cirebon, Jawa Barat 45144</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-icon bg-warning mr-4">
+                                <i class="fa fa-2x fa-money-bill-wave text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Biaya</h4>
+                                <h6>Registrasi</h6>
+                                <p>Rp350.000 (Include Dobok)</p>
+                                <h6>Iuran</h6>
+                                <p>Rp100.000/bulan</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row mt-2">
+                    <div class="col-lg-7 my-5 pt-5 pb-lg-5">
+                        <div class="section-title position-relative mb-4">
+                            <h1 class="display-4">Pemuda</h1>
+                        </div>
+                        <p class="mb-4 pb-2">Program ini terbuka untuk siapa saja, baik anak-anak, remaja, maupun
+                            dewasa
+                            yang ingin meningkatkan keterampilan bela diri, kekuatan fisik, dan mental melalui latihan
+                            Taekwondo yang terstruktur dan profesional. Cocok untuk pemula maupun yang ingin kembali
+                            aktif berlatih.
+                        </p>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-primary mr-4">
+                                <i class="fa fa-2x fa-calendar-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Jadwal Latihan</h4>
+                                <h6>Kelas Reguler</h6>
+                                <p>Sabtu (16.00-17.30) dan Minggu (08.00-10.00)</p>
+                                <h6>Kelas Prestasi</h6>
+                                <p>Senin dan Kamis (16.00 - 17.30)</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-secondary mr-4">
+                                <i class="fa fa-2x fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Lokasi</h4>
+                                <p>Gedung Pemuda, Jalan Komplek Perkantoran Bima Kel, Sunyaragi, Kec. Kesambi, Kota
+                                    Cirebon, Jawa Barat 45132</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-icon bg-warning mr-4">
+                                <i class="fa fa-2x fa-money-bill-wave text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Biaya</h4>
+                                <h6>Registrasi</h6>
+                                <p>Rp350.000 (include Dobok)</p>
+                                <h6>Iuran</h6>
+                                <p>Rp100.000/bulan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="{{ asset('images/pemuda.jpg') }}"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-2">
+                <div class="row">
+                    <div class="col-lg-5" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100"
+                                src="{{ asset('images/kevin-sport-academy.jpg') }}" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-7 my-5 pt-5 pb-lg-5">
+                        <div class="section-title position-relative mb-4">
+                            <h1 class="display-4">Kevin Sport Academy</h1>
+                        </div>
+                        <p class="mb-4 pb-2">Program elite untuk calon atlet profesional. Fokus pada persiapan
+                            kompetisi, pembinaan fisik, teknik,
+                            taktik, serta mental bertanding.
+                        </p>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-primary mr-4">
+                                <i class="fa fa-2x fa-calendar-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Jadwal Latihan</h4>
+                                <p>Rabu, Jumat dan Minggu (18.45 - 20.30)</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-secondary mr-4">
+                                <i class="fa fa-2x fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Lokasi</h4>
+                                <p>Dojang Kevin Sport, Kalijaga, Kec. Harjamukti, Kota Cirebon, Jawa Barat 45144</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-icon bg-warning mr-4">
+                                <i class="fa fa-2x fa-money-bill-wave text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Biaya</h4>
+                                <h6>Registrasi</h6>
+                                <p>Rp350.000</p>
+                                <h6>Iuran</h6>
+                                <p>Rp150.000/bulan</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row mt-2">
+                    <div class="col-lg-7 my-5 pt-5 pb-lg-5">
+                        <div class="section-title position-relative mb-4">
+                            <h1 class="display-4">Private / Diklat Poomsae</h1>
+                        </div>
+                        <p class="mb-4 pb-2">Program ini terbuka untuk siapa saja, baik anak-anak, remaja, maupun
+                            dewasa
+                            yang ingin meningkatkan keterampilan bela diri, kekuatan fisik, dan mental melalui latihan
+                            Taekwondo yang terstruktur dan profesional. Cocok untuk pemula maupun yang ingin kembali
+                            aktif berlatih.
+                        </p>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-primary mr-4">
+                                <i class="fa fa-2x fa-calendar-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Jadwal Latihan</h4>
+                                <p>Senin (19.00 - 20.30)<br>
+                                    Sabtu (14.00 - 15.30)</p>
+
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <div class="btn-icon bg-secondary mr-4">
+                                <i class="fa fa-2x fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Lokasi</h4>
+                                <p>Gedung Pemuda, Jalan Komplek Perkantoran Bima Kel, Sunyaragi, Kec. Kesambi, Kota
+                                    Cirebon, Jawa Barat 45132</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="btn-icon bg-warning mr-4">
+                                <i class="fa fa-2x fa-money-bill-wave text-white"></i>
+                            </div>
+                            <div class="mt-n1">
+                                <h4>Biaya</h4>
+                                <h6>Private</h6>
+                                <p>Rp350.000/bulan</p>
+                                <h6>Diklat</h6>
+                                <p>Rp125.000/bulan</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100" src="{{ asset('images/diklat.jpg') }}"
+                                style="object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Class End -->
+
+    <!-- Infinite Loop Coach Section -->
+    <section id="coach" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h6 class="text-uppercase text-danger mb-2" style="letter-spacing: 2px;">Coach</h6>
+                <h1 class="display-4 fw-bold">Meet Our Coach</h1>
+            </div>
+
+            <div class="position-relative">
+                <button id="btn-prev"
+                    class="btn btn-primary position-absolute top-50 start-0 translate-middle-y z-3">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <div class="coach-carousel d-flex overflow-hidden position-relative">
+                    <div id="carousel-track" class="d-flex transition">
+                        @php
+                            $coaches = [
+                                [
+                                    'img' => 'sabeum-suwir.jpg',
+                                    'nama' => 'Suwiriyadi',
+                                    'divisi' => 'Pemuda Coach',
+                                    'dan' => 'DAN V KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-supri.jpg',
+                                    'nama' => 'Supriyadi',
+                                    'divisi' => 'Pemuda Coach',
+                                    'dan' => 'DAN IV KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-belva.jpg',
+                                    'nama' => 'Belva Calista',
+                                    'divisi' => 'Pemuda Coach',
+                                    'dan' => 'DAN IV KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-vilvi.jpg',
+                                    'nama' => 'Vilvi',
+                                    'divisi' => 'Pemuda Coach',
+                                    'dan' => 'DAN II KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-hari.jpg',
+                                    'nama' => 'Hari Suprapto',
+                                    'divisi' => 'Pemuda Coach',
+                                    'dan' => 'DAN II KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-olis.jpeg',
+                                    'nama' => 'M Nurkholis',
+                                    'divisi' => 'Pemuda Coach',
+                                    'dan' => 'DAN I KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-rinto.jpg',
+                                    'nama' => 'Rinto Ardianto',
+                                    'divisi' => 'Kevin Junior',
+                                    'dan' => 'DAN III KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-solihin.jpg',
+                                    'nama' => 'Solihin Andhika',
+                                    'divisi' => 'Kevin Junior Coach',
+                                    'dan' => 'DAN I KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-akbar.jpg',
+                                    'nama' => 'M Akbar K',
+                                    'divisi' => 'Kevin Junior Coach',
+                                    'dan' => 'DAN III KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-nana.jpg',
+                                    'nama' => 'Nana Supriyatna',
+                                    'divisi' => 'Kevin Sport Academy Coach',
+                                    'dan' => 'DAN II KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-esti.jpg',
+                                    'nama' => 'Esti Dwi Wahyuni',
+                                    'divisi' => 'Private / Diklat Poomsae Coach',
+                                    'dan' => 'DAN IV KUKKIWON',
+                                ],
+                                [
+                                    'img' => 'sabeum-dhea.jpg',
+                                    'nama' => 'Dhea Aulia U',
+                                    'divisi' => 'Private / Diklat Poomsae Coach',
+                                    'dan' => 'DAN II KUKKIWON',
+                                ],
+                            ];
+                        @endphp
+
+                        @foreach ($coaches as $coach)
+                            <div class="coach-card flex-shrink-0 text-center mx-2">
+                                <img src="{{ asset('images/' . $coach['img']) }}" class="img-fluid"
+                                    style="height: 300px; object-fit: cover;">
+                                <div class="bg-light p-3">
+                                    <h5 class="mb-1">{{ $coach['nama'] }}</h5>
+                                    <p class="mb-1">{{ $coach['divisi'] }}</p>
+                                    <small class="text-muted">{{ $coach['dan'] }}</small>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+                <button id="btn-next" class="btn btn-primary position-absolute top-50 end-0 translate-middle-y z-3">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="section-title text-center position-relative mb-5">
+            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Gallery</h6>
+            <h1 class="display-4">Dokumentasi Kegiatan & Prestasi Kevin Sport Taekwondo</h1>
+        </div>
+        <div class="gallery">
+            <img src="{{ asset('images/gallery/gallery-1.jpg') }}" alt="Gallery 1" onclick="openLightbox(this)" />
+            <img src="{{ asset('images/gallery/gallery-2.jpg') }}" alt="Gallery 2" onclick="openLightbox(this)" />
+            <img src="{{ asset('images/gallery/gallery-3.jpg') }}" alt="Gallery 3" onclick="openLightbox(this)" />
+            <img src="{{ asset('images/gallery/gallery-4.jpg') }}" alt="Gallery 4" onclick="openLightbox(this)" />
+            <img src="{{ asset('images/gallery/gallery-5.jpg') }}" alt="Gallery 5" onclick="openLightbox(this)" />
+            <img src="{{ asset('images/gallery/gallery-6.jpg') }}" alt="Gallery 6" onclick="openLightbox(this)" />
+            <img src="{{ asset('images/gallery/gallery-7.jpg') }}" alt="Gallery 7" onclick="openLightbox(this)" />
+            <img src="{{ asset('images/gallery/gallery-8.jpg') }}" alt="Gallery 8" onclick="openLightbox(this)" />
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" />
+    </div>
+
+    <script>
+        function openLightbox(img) {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 border-top py-4"
+        style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="container">
+            <div
+                class="d-flex justify-content-between align-items-center flex-column flex-md-row text-center text-md-start">
+                <!-- Left Side: Copyright -->
+                <div class="mb-3 mb-md-0">
+                    <p class="m-0">
+                        Copyright &copy;
+                        <a class="text-white" href="#">Kevin Sport</a>. All Rights Reserved.
+                    </p>
+                </div>
+
+                <!-- Right Side: Contact and Social Media (1 baris) -->
+                <div class="d-flex align-items-center justify-content-center justify-content-md-end flex-wrap gap-3">
+                    <small><i class="fa fa-phone-alt me-2"></i>+62 821 2703 2424</small>
+                    <a class="text-white px-2" href="https://www.facebook.com/dojang.sport">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-white px-2"
+                        href="https://www.instagram.com/kevin_sport_dojang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-white px-2" href="https://www.youtube.com/@suwiriyadi">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary rounded-0 btn-lg-square back-to-top"><i
+            class="fa fa-angle-double-up"></i></a>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+            function setActiveLink() {
+                let currentSection = "";
+
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        currentSection = section.getAttribute("id");
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    const href = link.getAttribute("href");
+
+                    if (href === `#${currentSection}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+
+            // Jalankan saat scroll
+            window.addEventListener("scroll", setActiveLink);
+
+            // Jalankan saat pertama kali load
+            setActiveLink();
+        });
+    </script>
+
+
+    <script>
+        const track = document.getElementById("carousel-track");
+        const btnPrev = document.getElementById("btn-prev");
+        const btnNext = document.getElementById("btn-next");
+        const cardWidth = 304; // Sesuaikan: 300px card + 4px gap
+
+        let index = 0;
+        const cards = track.children;
+        const total = cards.length;
+
+        // Duplicate for infinite scroll
+        track.innerHTML += track.innerHTML;
+
+        function scrollToCard(idx) {
+            track.style.transform = `translateX(-${idx * cardWidth}px)`;
+        }
+
+        function nextCard() {
+            index++;
+            if (index >= total) {
+                index = 0;
+                track.style.transition = "none";
+                scrollToCard(index);
+                setTimeout(() => {
+                    track.style.transition = "transform 0.5s ease-in-out";
+                    nextCard();
+                }, 50);
+            } else {
+                scrollToCard(index);
+            }
+        }
+
+        function prevCard() {
+            index--;
+            if (index < 0) {
+                index = total - 1;
+                track.style.transition = "none";
+                scrollToCard(index + total); // jump to duplicate
+                setTimeout(() => {
+                    track.style.transition = "transform 0.5s ease-in-out";
+                    scrollToCard(index);
+                }, 50);
+            } else {
+                scrollToCard(index);
+            }
+        }
+
+        btnNext.addEventListener("click", nextCard);
+        btnPrev.addEventListener("click", prevCard);
+
+        // Auto scroll
+        let autoScroll = setInterval(nextCard, 3000);
+
+        // Reset interval when clicked
+        btnNext.addEventListener("click", () => {
+            clearInterval(autoScroll);
+            autoScroll = setInterval(nextCard, 3000);
+        });
+        btnPrev.addEventListener("click", () => {
+            clearInterval(autoScroll);
+            autoScroll = setInterval(nextCard, 3000);
+        });
+    </script>
+
+</body>
+
 </html>

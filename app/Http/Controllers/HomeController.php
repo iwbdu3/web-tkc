@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\JadwalUjian;
+use App\Models\UjianPeserta;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // $jumlahAnggota = User::role(['peserta'])->count();
+        $jumlahAnggota = User::count();
+        $jumlahUjian = JadwalUjian::count();
+        $jumlahPeserta = UjianPeserta::count();
+
+        return view('home', compact('jumlahAnggota', 'jumlahUjian', 'jumlahPeserta'));
     }
 }

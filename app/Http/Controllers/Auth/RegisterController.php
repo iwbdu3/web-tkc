@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Models\Role;
 
 class RegisterController extends Controller
 {
@@ -64,10 +65,22 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        // Ambil ID terakhir untuk buat custom_id berikutnya
+        $latestId = User::max('id') + 1;
+        $prefix = 'psa';
+        $custom_id = $prefix . str_pad($latestId, 4, '0', STR_PAD_LEFT);
+
+        // Buat user baru langsung dengan custom_id
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'custom_id' => $custom_id, // langsung set di awal
         ]);
+
+        // Assign role peserta
+        $user->assignRole('peserta');
+
+        return $user;
     }
 }
