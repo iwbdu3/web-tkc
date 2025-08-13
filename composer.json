@@ -5,7 +5,7 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0",
+        "php": "^8.2",
         "doctrine/dbal": "^4.3",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^11.0",
@@ -13,7 +13,15 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^4.0",
         "spatie/laravel-permission": "^6.20",
-        "yajra/laravel-datatables-oracle": "^11.1"
+        "yajra/laravel-datatables-oracle": "^11.1",
+
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-pdo": "*",
+        "ext-pdo_mysql": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
