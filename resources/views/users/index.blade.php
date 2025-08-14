@@ -40,10 +40,6 @@
                 <table class="table table-bordered table-sm align-middle text-center">
                     <tr>
                         <th>No</th>
-<<<<<<< HEAD
-=======
-                        {{-- <th>Id</th> --}}
->>>>>>> 623dad0 (Update blade file and build assets)
                         <th>Name</th>
                         <th>Email</th>
                         <th>Roles</th>
@@ -53,10 +49,6 @@
                     @foreach ($data as $key => $user)
                         <tr>
                             <td>{{ ++$i }}</td>
-<<<<<<< HEAD
-=======
-                            {{-- <td>{{ $user->custom_id }}</td> --}}
->>>>>>> 623dad0 (Update blade file and build assets)
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
