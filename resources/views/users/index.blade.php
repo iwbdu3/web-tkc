@@ -40,7 +40,6 @@
                 <table class="table table-bordered table-sm align-middle text-center">
                     <tr>
                         <th>No</th>
-<!--                         <th>Id</th> -->
                         <th>Name</th>
                         <th>Email</th>
                         <th>Roles</th>
@@ -50,7 +49,6 @@
                     @foreach ($data as $key => $user)
                         <tr>
                             <td>{{ ++$i }}</td>
-<!--                             <td>{{ $user->custom_id }}</td> -->
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>
