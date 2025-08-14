@@ -16,9 +16,7 @@
                     <p>{{ $message }}</p>
                 </div>
             @endif
-
             <form id="search-form" class="mb-3 row">
-
                 <div class="col-md-4">
                     <input type="text" id="search" name="search" value="{{ request('search') }}"
                         class="form-control form-control-sm" placeholder="Cari nama atau email...">

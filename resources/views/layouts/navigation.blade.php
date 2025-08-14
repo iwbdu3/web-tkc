@@ -25,24 +25,6 @@
                     {{ __('Users') }}
                 </a>
             </li>
-
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{ route('roles.index') }}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{ asset('icons/coreui.svg#cil-group') }}"></use>
-                    </svg>
-                    {{ __('Roles') }}
-                </a>
-            </li> --}}
-
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{ route('clients.index') }}">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
-                    </svg>
-                    {{ __('Clients') }}
-                </a>
-            </li> --}}
         @endrole
 
         {{-- Panitia dan Admin --}}
@@ -101,14 +83,6 @@
 
         {{-- Peserta --}}
         @role('peserta')
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <svg class="nav-icon">
-                        <use xlink:href="{{ asset('icons/coreui.svg#cil-user') }}"></use>
-                    </svg>
-                    {{ __('Profil Saya') }}
-                </a>
-            </li> --}}
 
             <!-- Dropdown Menu Ujian -->
             <li class="nav-group">
