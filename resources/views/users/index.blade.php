@@ -17,12 +17,7 @@
                 </div>
             @endif
 
-            {{-- <form method="GET" action="{{ route('users.index') }}" class="mb-3 row"> --}}
             <form id="search-form" class="mb-3 row">
-                {{-- <div class="col-md-4">
-                    <input type="text" name="search" value="{{ request('search') }}"
-                        class="form-control form-control-sm" placeholder="Cari nama atau email...">
-                </div> --}}
 
                 <div class="col-md-4">
                     <input type="text" id="search" name="search" value="{{ request('search') }}"
@@ -34,8 +29,6 @@
                     <a href="{{ route('users.index') }}" class="btn btn-light btn-sm">Reset</a>
                 </div>
             </form>
-
-            
             <div class="table-responsive">
                 <table class="table table-bordered table-sm align-middle text-center">
                     <tr>
