@@ -98,8 +98,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
     {{-- <script src="{{ asset('js/coreui.bundle.min.js') }}"></script> --}}
-    <script src="{{ asset('js/coreui.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="https://kevinsport.up.railway.app/js/coreui.js"></script>
+    <script src="https://kevinsport.up.railway.app/js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://cdn.datatables.net/v/bs4/dt-1.11.3/datatables.min.js"></script>
 

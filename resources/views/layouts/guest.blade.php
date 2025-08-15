@@ -18,6 +18,6 @@
         </div>
     </div>
 </div>
-<script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
+<script src="https://kevinsport.up.railway.app/js/coreui.bundle.min.js"></script>
 </body>
 </html>
