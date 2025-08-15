@@ -31,7 +31,7 @@
         @role('panitia|admin')
             <!-- Dropdown Menu Ujian -->
             <li class="nav-group">
-                <a class="nav-link nav-group-toggle" href="#">
+                <a class="nav-link nav-group-toggle" href="">
                     <svg class="nav-icon">
                         <use xlink:href="{{ asset('icons/coreui.svg#cil-library') }}"></use>
                     </svg>
@@ -63,7 +63,7 @@
         {{-- Penguji --}}
         @role('admin|penguji')
             <li class="nav-group">
-                <a class="nav-link nav-group-toggle" href="#">
+                <a class="nav-link nav-group-toggle" href="">
                     <svg class="nav-icon">
                         <use xlink:href="{{ asset('icons/coreui.svg#cil-library') }}"></use>
                     </svg>
@@ -83,10 +83,9 @@
 
         {{-- Peserta --}}
         @role('peserta')
-
             <!-- Dropdown Menu Ujian -->
             <li class="nav-group">
-                <a class="nav-link nav-group-toggle" href="#">
+                <a class="nav-link nav-group-toggle" href="">
                     <svg class="nav-icon">
                         <use xlink:href="{{ asset('icons/coreui.svg#cil-library') }}"></use>
                     </svg>
