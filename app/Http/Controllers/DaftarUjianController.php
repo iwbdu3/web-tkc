@@ -88,7 +88,6 @@ class DaftarUjianController extends Controller
             ? $request->file('bukti_pembayaran')->move(public_path('uploads/bukti'), $request->file('bukti_pembayaran')->hashName())
             : null;
 
-
         UjianPeserta::create([
             'user_id' => Auth::id(), // Tambahkan baris ini
             'jadwal_ujian_id' => $jadwal_id,
