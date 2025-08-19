@@ -43,4 +43,18 @@ class UjianPeserta extends Model
     {
         return $this->hasOne(Penilaian::class, 'ujian_peserta_id');
     }
+
+    public function getFotoUrlAttribute()
+    {
+        return $this->foto
+            ? asset('storage/' . $this->foto)
+            : asset('images/default-foto.png'); // fallback default
+    }
+
+    public function getBuktiPembayaranUrlAttribute()
+    {
+        return $this->bukti_pembayaran
+            ? asset('storage/' . $this->bukti_pembayaran)
+            : null;
+    }
 }
