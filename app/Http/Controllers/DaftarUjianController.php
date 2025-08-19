@@ -77,8 +77,17 @@ class DaftarUjianController extends Controller
         }
 
         // Upload file jika ada
-        $foto = $request->file('foto') ? $request->file('foto')->store('uploads/foto', 'public') : null;
-        $bukti = $request->file('bukti_pembayaran') ? $request->file('bukti_pembayaran')->store('uploads/bukti', 'public') : null;
+        // $foto = $request->file('foto') ? $request->file('foto')->store('uploads/foto', 'public') : null;
+        // $bukti = $request->file('bukti_pembayaran') ? $request->file('bukti_pembayaran')->store('uploads/bukti', 'public') : null;
+
+        $foto = $request->file('foto')
+            ? $request->file('foto')->move(public_path('uploads/foto'), $request->file('foto')->hashName())
+            : null;
+
+        $bukti = $request->file('bukti_pembayaran')
+            ? $request->file('bukti_pembayaran')->move(public_path('uploads/bukti'), $request->file('bukti_pembayaran')->hashName())
+            : null;
+
 
         UjianPeserta::create([
             'user_id' => Auth::id(), // Tambahkan baris ini
