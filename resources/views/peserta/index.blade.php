@@ -35,7 +35,7 @@
                                 <td>
                                     @if ($d->foto)
                                         <!-- Gambar thumbnail -->
-                                        <img src="{{ $d->foto }}" alt="Foto" width="60"
+                                        <img src="{{ asset('storage/' . $d->foto) }}" alt="Foto" width="60"
                                             class="img-thumbnail" style="cursor: pointer" data-bs-toggle="modal"
                                             data-bs-target="#fotoModal{{ $d->id }}">
 
