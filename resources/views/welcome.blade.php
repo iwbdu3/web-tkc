@@ -69,9 +69,9 @@
 
             <!-- Menu Navigasi -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
@@ -89,11 +89,11 @@
                         <a class="nav-link" href="#gallery">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://wa.me/6282127032424">Contact</a>
+                        <a class="nav-link" target="_blank" href="https://wa.me/6282127032424">Contact</a>
                     </li>
-                    {{-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="btn btn-primary ms-2" href="{{ route('login') }}">Login</a>
-                    </li> --}}
+                    </li>
                 </ul>
             </div>
         </div>
